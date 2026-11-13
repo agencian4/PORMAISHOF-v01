@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PORMAISHOF 02</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Pormaishof: cursos presenciais de Harmonização Orofacial em Recife para cirurgiões-dentistas. Imersão Expert em Toxina Botulínica, Perfect Lips e Workshop de Bioestimuladores de Colágeno, com prática supervisionada em paciente.">
+<meta property="og:title" content="Pormaishof | Aprenda HOF aplicando em paciente">
+<meta property="og:description" content="Mais de 30 turmas formadas em Recife. Anatomia, marcação e prática supervisionada no mesmo programa.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="img/socias.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: landing de conversão. Plum sólido (sem gradientes) + bandas lilás-névoa; títulos em Montserrat 800 apertado,
+   corpo em Figtree; bento grids assimétricos de 6 colunas; CTA no topo, no meio e numa barra fixa no celular. */
+:root{
+  --plum:#1b1020;      /* fundo principal */
+  --plum-2:#251630;    /* tiles no escuro */
+  --plum-3:#3a2444;    /* linhas no escuro */
+  --lilac:#b79fe3;     /* lilás dos jalecos: ação */
+  --lilac-2:#cdb9f0;   /* hover da ação */
+  --lilac-deep:#5f4396;/* lilás para texto no claro */
+  --mist:#efe9f5;      /* banda clara */
+  --mist-2:#e0d6ec;    /* linhas no claro */
+  --tile-l:#f8f4fb;    /* tiles no claro */
+  --champagne:#d8b897; /* ouro rosé do monograma */
+  --ink:#1f1228;       /* texto no claro */
+  --paper:#f5eff8;     /* texto no escuro */
+  --muted-d:#ab9ab6;   /* secundário no escuro */
+  --muted-l:#6a5875;   /* secundário no claro */
+  --display:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  --body:"Figtree","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --spring:cubic-bezier(.3,1.4,.5,1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--plum);color:var(--paper);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--plum)}
+a{color:inherit}
+img{max-width:100%}
+:focus-visible{outline:2px solid var(--lilac);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:1320px;margin-inline:auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+@media (max-width:600px){.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
+section{scroll-margin-top:84px}
+
+/* tipografia */
+.display{font-family:var(--display);font-weight:800;letter-spacing:-.045em;line-height:.95;margin:0;text-wrap:balance}
+h1.display{font-size:clamp(46px,7.4vw,118px);text-transform:uppercase;line-height:.9}
+h2.display{font-size:clamp(34px,4.6vw,68px)}
+h3{font-family:var(--display);font-weight:700;letter-spacing:-.03em;line-height:1.08;margin:0}
+.lead{font-size:clamp(17px,1.35vw,20px);color:var(--muted-d);max-width:46ch;margin:0}
+.band-light .lead{color:var(--muted-l)}
+.num{font-family:var(--display);font-weight:800;letter-spacing:-.05em;line-height:.9;font-variant-numeric:tabular-nums lining-nums}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-family:var(--body);font-weight:700;font-size:16px;border-radius:999px;padding:16px 26px;border:0;cursor:pointer;white-space:nowrap;transition:transform .35s var(--spring),background .25s,color .25s,box-shadow .35s var(--ease)}
+.btn svg{width:18px;height:18px;transition:transform .35s var(--spring)}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover svg{transform:translateX(3px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn-main{background:var(--lilac);color:var(--ink);box-shadow:0 10px 30px -14px rgba(183,159,227,.8)}
+.btn-main:hover{background:var(--lilac-2);box-shadow:0 16px 36px -14px rgba(183,159,227,.9)}
+.btn-line{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 1.5px var(--plum-3)}
+.btn-line:hover{box-shadow:inset 0 0 0 1.5px var(--lilac)}
+.band-light .btn-line{color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--mist-2)}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:#34203f}
+
+/* cabeçalho */
+.top{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;transition:background .35s,box-shadow .35s}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:18px;transition:padding .35s}
+.top.is-scrolled{background:rgba(27,16,32,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--plum-3)}
+.top.is-scrolled .wrap{padding-block:11px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mono{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--plum-2);box-shadow:inset 0 0 0 1px var(--plum-3);position:relative;flex:none}
+.mono span{font-family:var(--display);font-weight:500;color:var(--champagne);font-size:19px;line-height:1;position:absolute}
+.mono span:first-child{transform:translateX(-3px)}
+.mono span:last-child{transform:translateX(4px);opacity:.7}
+.wordmark{font-family:var(--display);font-weight:600;letter-spacing:.24em;font-size:12px}
+.wordmark b{color:var(--champagne);font-weight:800}
+.nav{display:flex;gap:28px;font-size:15px}
+.nav a{text-decoration:none;color:var(--muted-d);transition:color .2s}
+.nav a:hover{color:var(--paper)}
+.top .btn{padding:11px 20px;font-size:14px}
+@media (max-width:960px){.nav{display:none}}
+@media (max-width:420px){.top .btn{padding:10px 15px;font-size:13px}.wordmark{font-size:11px;letter-spacing:.18em}}
+
+/* HERO */
+.hero{padding-top:128px;padding-bottom:56px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:end}
+.hero-copy{display:grid;gap:28px;min-width:0}
+.live{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:var(--paper);justify-self:start;background:var(--plum-2);border-radius:999px;padding:8px 16px 8px 12px}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--lilac);box-shadow:0 0 0 0 rgba(183,159,227,.6);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(183,159,227,0)}100%{box-shadow:0 0 0 0 rgba(183,159,227,0)}}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+h1 .ln > span{display:inline-block;animation:rise 1s var(--ease) both}
+h1 .ln:nth-child(2) > span{animation-delay:.08s}
+h1 .ln:nth-child(3) > span{animation-delay:.16s;color:var(--lilac)}
+@keyframes rise{from{transform:translateY(100%)}to{transform:none}}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.proofline{display:flex;flex-wrap:wrap;gap:10px}
+.chipnum{display:flex;align-items:baseline;gap:8px;background:var(--plum-2);border-radius:14px;padding:12px 16px}
+.chipnum .num{font-size:26px;color:var(--paper)}
+.chipnum span{font-size:14px;color:var(--muted-d);line-height:1.25}
+.hero-film{position:relative;margin:0;border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:var(--plum-2);max-width:100%;will-change:transform}
+.hero-film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.film-btn{position:absolute;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(27,16,32,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--paper);display:grid;place-items:center;cursor:pointer;transition:transform .3s var(--spring)}
+.film-btn:hover{transform:scale(1.08)}
+.film-btn svg{width:16px;height:16px}
+.film-note{position:absolute;left:16px;bottom:16px;right:76px;background:rgba(27,16,32,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:14px;padding:10px 14px;font-size:14px;line-height:1.35}
+.film-note b{display:block;font-family:var(--display);font-weight:700;letter-spacing:-.02em}
+@media (max-width:960px){.hero-grid{grid-template-columns:1fr}.hero-film{aspect-ratio:4/5;max-height:72vh}}
+@media (max-width:600px){.hero{padding-top:100px}.cta-row .btn{flex:1 1 100%}.chipnum{flex:1 1 calc(50% - 5px)}.chipnum:last-child{flex-basis:100%}}
+
+/* faixa corrida */
+.ticker{overflow:hidden;padding-block:18px;background:var(--lilac);color:var(--ink)}
+.ticker-track{display:flex;width:max-content;animation:tick 46s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-item{display:flex;align-items:center;gap:26px;padding-right:26px;font-family:var(--display);font-weight:800;font-size:clamp(18px,1.8vw,24px);letter-spacing:-.02em;white-space:nowrap;text-transform:uppercase}
+.ticker-item .sep{width:8px;height:8px;border-radius:50%;background:var(--ink);opacity:.5;flex:none}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* seções */
+.sec{padding-block:clamp(88px,10vw,140px)}
+.band-light{background:var(--mist);color:var(--ink)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 48px;margin-bottom:48px}
+.sec-head .lead{max-width:40ch}
+
+/* BENTO base */
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.tile{position:relative;border-radius:24px;overflow:hidden;min-width:0;isolation:isolate;transition:transform .45s var(--spring),box-shadow .45s var(--ease)}
+.tile:hover{transform:translateY(-4px)}
+.tile .bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:-2;transition:transform .9s var(--ease)}
+.tile:hover .bg{transform:scale(1.045)}
+.tile .shade{position:absolute;inset:0;z-index:-1;background:rgba(27,16,32,.38)}
+.tile-pad{padding:26px;display:flex;flex-direction:column;gap:10px;height:100%}
+
+/* motivos */
+.why .tile{background:var(--tile-l);color:var(--ink);box-shadow:inset 0 0 0 1px var(--mist-2)}
+.why .tile:hover{box-shadow:inset 0 0 0 1px var(--mist-2),0 24px 50px -30px rgba(31,18,40,.45)}
+.why .tile.photo{color:var(--paper);min-height:300px}
+.why .tile.photo .tile-pad{justify-content:flex-end}
+.why .tile h3{font-size:clamp(21px,1.9vw,28px)}
+.why .tile p{margin:0;font-size:15px;line-height:1.5;color:var(--muted-l);max-width:40ch}
+.why .tile.photo p{color:rgba(245,239,248,.86)}
+.why .k{font-family:var(--display);font-weight:800;font-size:14px;color:var(--lilac-deep)}
+.why .photo .k{color:var(--lilac)}
+.w1{grid-column:1 / span 3;grid-row:span 2;min-height:520px!important}
+.w2{grid-column:4 / span 3;background:var(--ink)!important;color:var(--paper)!important;box-shadow:none!important}
+.w2 .num{font-size:clamp(76px,8vw,120px);color:var(--lilac)}
+.w2 p{color:var(--muted-d)!important}
+.w3{grid-column:4 / span 2}
+.w4{grid-column:6 / span 1;min-height:260px}
+.w5{grid-column:1 / span 2}
+.w6{grid-column:3 / span 2;min-height:260px}
+.w7{grid-column:5 / span 2;background:var(--lilac)!important;box-shadow:none!important}
+.w7 p{color:var(--ink)!important;opacity:.8}
+.w7 .k{color:var(--ink)!important}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.chip{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:rgba(31,18,40,.08)}
+@media (max-width:1020px){
+  .why .bento{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .w1,.w2,.w3,.w4,.w5,.w6,.w7{grid-column:auto;grid-row:auto}
+  .w1{grid-column:1 / -1;min-height:420px!important}
+  .w2,.w6{grid-column:1 / -1}
+  .w4{min-height:300px}
+}
+@media (max-width:560px){.why .bento{grid-template-columns:1fr}.w1{min-height:380px!important}}
+
+/* formações */
+.courses .tile{background:var(--plum-2);color:var(--paper)}
+.courses .tile:hover{box-shadow:0 30px 60px -36px rgba(0,0,0,.8)}
+.c1{grid-column:1 / span 4;grid-row:span 2;display:grid;grid-template-columns:1fr 1fr}
+.c2{grid-column:5 / span 2;grid-row:span 2;display:grid;grid-template-rows:280px auto}
+.c3{grid-column:1 / span 6;display:grid;grid-template-columns:1.1fr 1fr 1fr}
+.cimg{position:relative;overflow:hidden;min-height:260px}
+.cimg .bg{position:absolute;inset:-8% 0;background-size:cover;background-position:center;z-index:0;transition:transform .9s var(--ease)}
+.tile:hover .cimg .bg{transform:scale(1.04)}
+.cbody{padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.cstatus{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--lilac)}
+.cstatus::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.cbody h3{font-size:clamp(24px,2.3vw,34px)}
+.cbody > p{margin:0;color:var(--muted-d);font-size:16px}
+.topics{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.topics li{display:flex;gap:10px;align-items:baseline;font-size:15px}
+.topics li::before{content:"";flex:none;width:6px;height:6px;border-radius:2px;background:var(--lilac);transform:translateY(-2px)}
+.cbody .btn{margin-top:auto;align-self:flex-start}
+.c3 .cbody:nth-child(3){justify-content:center}
+@media (max-width:1020px){
+  .courses .bento{grid-template-columns:1fr}
+  .c1,.c2,.c3{grid-column:auto;grid-row:auto}
+  .c1,.c3{grid-template-columns:1fr 1fr}
+  .c2{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .c3 .cbody:nth-child(3){grid-column:1 / -1;padding-top:0}
+}
+@media (max-width:640px){
+  .c1,.c2,.c3{grid-template-columns:1fr}
+  .cimg{min-height:0;aspect-ratio:4/3}
+  .c3 .cbody:nth-child(3){grid-column:auto}
+  .cbody .btn{align-self:stretch}
+}
+
+/* CTA do meio */
+.midcta{margin-top:14px;border-radius:24px;background:var(--lilac);color:var(--ink);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px;padding:30px 34px}
+.midcta h3{font-size:clamp(22px,2.2vw,32px);max-width:24ch}
+.midcta .cta-row .btn-line{color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(31,18,40,.3)}
+@media (max-width:600px){.midcta{padding:24px}.midcta .cta-row{width:100%}}
+
+/* mapa de marcação */
+.map-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:center}
+.map-copy{display:grid;gap:22px}
+.facemap{position:relative;background-color:var(--plum);color:var(--paper);border-radius:28px;padding:24px;display:grid;gap:18px;min-width:0;
+  background-image:linear-gradient(rgba(183,159,227,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(183,159,227,.07) 1px,transparent 1px);background-size:22px 22px;background-position:-1px -1px}
+.fm-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.fm-title{margin:0;font-family:var(--display);font-weight:700;font-size:15px;color:var(--champagne)}
+.fm-tabs{display:flex;gap:4px;background:rgba(245,239,248,.06);border-radius:999px;padding:4px}
+.fm-tab{font:inherit;font-size:14px;font-weight:600;color:var(--muted-d);background:transparent;border:0;border-radius:999px;padding:9px 15px;cursor:pointer;transition:background .3s,color .3s}
+.fm-tab:hover{color:var(--paper)}
+.fm-tab[aria-selected="true"]{background:var(--lilac);color:var(--ink)}
+.fm-body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:18px;align-items:center}
+.fm-svg{width:100%;height:auto;max-width:100%;display:block;overflow:visible}
+.fm-face path,.fm-face circle{fill:none;stroke:rgba(245,239,248,.6);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.fm-face .soft{stroke:rgba(245,239,248,.32)}
+.fm-face .iris{fill:rgba(245,239,248,.18);stroke:none}
+.fm-layer[hidden]{display:none}
+.grp{transition:opacity .35s}
+.pts circle{fill:var(--lilac);stroke:rgba(183,159,227,.32);stroke-width:7;paint-order:stroke}
+.zone path,.zone ellipse,.zone circle{fill:rgba(216,184,151,.14);stroke:var(--champagne);stroke-width:1.1;stroke-dasharray:3 3}
+.zone.line path{fill:none;stroke-width:1.6}
+.vec path{fill:none;stroke:var(--lilac);stroke-width:1.4;stroke-linecap:round;opacity:.85}
+.fm-svg[data-focus] .grp{opacity:.18}
+.fm-svg[data-focus="frontal"] [data-g="frontal"],.fm-svg[data-focus="glabela"] [data-g="glabela"],.fm-svg[data-focus="periorbital"] [data-g="periorbital"],
+.fm-svg[data-focus="sobrancelha"] [data-g="sobrancelha"],.fm-svg[data-focus="orbita"] [data-g="orbita"],.fm-svg[data-focus="contorno"] [data-g="contorno"],
+.fm-svg[data-focus="cupido"] [data-g="cupido"],.fm-svg[data-focus="volume"] [data-g="volume"],.fm-svg[data-focus="arteria"] [data-g="arteria"],
+.fm-svg[data-focus="entrada"] [data-g="entrada"],.fm-svg[data-focus="malar"] [data-g="malar"],.fm-svg[data-focus="mandibula"] [data-g="mandibula"],
+.fm-svg[data-focus="forame"] [data-g="forame"]{opacity:1}
+.fm-legend{display:grid;gap:14px;min-width:0}
+.fm-legend ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.fm-legend ul[hidden]{display:none}
+.fm-legend li{display:grid;grid-template-columns:18px 1fr;column-gap:10px;padding:9px 10px;border-radius:12px;transition:background .25s;outline:none}
+.fm-legend li:hover,.fm-legend li:focus-visible{background:rgba(245,239,248,.07)}
+.fm-legend li:focus-visible{box-shadow:inset 0 0 0 1px var(--lilac)}
+.fm-legend li span{font-size:15px;font-weight:600;line-height:1.3}
+.fm-legend li small{grid-column:2;font-size:13px;color:var(--muted-d)}
+.sw{grid-row:span 2;align-self:center;width:12px;height:12px;border-radius:50%}
+.sw.pt{background:var(--lilac);box-shadow:0 0 0 4px rgba(183,159,227,.25)}
+.sw.zn{border:1px dashed var(--champagne);background:rgba(216,184,151,.16)}
+.sw.ln{height:0;border-radius:0;border-top:2px dashed var(--champagne)}
+.sw.vc{height:0;border-radius:0;border-top:2px solid var(--lilac)}
+.fm-note{margin:0;font-size:13px;line-height:1.5;color:var(--muted-d);padding:0 10px}
+.fm-svg.armed .fm-face path{stroke-dasharray:1;stroke-dashoffset:1}
+.fm-svg.armed .grp > *{opacity:0;transform:scale(.4);transform-box:fill-box;transform-origin:center}
+.fm-svg.drawn .fm-face path{stroke-dashoffset:0;transition:stroke-dashoffset 1.6s cubic-bezier(.65,0,.35,1)}
+.fm-svg.lit .grp > *{opacity:1;transform:none;transition:opacity .45s ease,transform .6s cubic-bezier(.2,1.6,.4,1)}
+@media (max-width:1020px){.map-grid{grid-template-columns:minmax(0,1fr);gap:40px}}
+@media (max-width:560px){.facemap{padding:16px;border-radius:22px}.fm-head{flex-direction:column;align-items:stretch}.fm-tab{flex:1;padding:8px 6px;font-size:13px}.fm-body{grid-template-columns:1fr}.fm-svg{max-width:300px;margin-inline:auto}}
+
+/* método */
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;list-style:none;margin:0;padding:0}
+.steps-line{position:absolute;left:0;right:0;top:0;height:3px;border-radius:3px;background:var(--plum-3);overflow:hidden}
+.steps-line i{position:absolute;inset:0;background:var(--lilac);transform-origin:left;transform:scaleX(1)}
+.step{padding-top:34px;display:grid;gap:10px;align-content:start}
+.step .n{font-family:var(--display);font-weight:800;font-size:56px;letter-spacing:-.05em;line-height:.9;color:var(--plum-3);transition:color .4s}
+.step.on .n{color:var(--lilac)}
+.step h3{font-size:22px}
+.step p{margin:0;color:var(--muted-d);font-size:15px;max-width:30ch}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr;row-gap:36px}.steps-line{display:none}.step{padding-top:0}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* professoras (bento) */
+.team .bento{grid-auto-rows:minmax(0,auto)}
+.t1{grid-column:1 / span 3;grid-row:span 3;min-height:560px}
+.t1 .bg{background-position:center 30%}
+.t1 .tile-pad{justify-content:flex-end}
+.t1 h3{font-size:clamp(24px,2.4vw,34px)}
+.t1 p{margin:0;color:rgba(245,239,248,.86);max-width:36ch}
+.prof{grid-column:4 / span 3;display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center;background:var(--plum-2);padding:14px;border-radius:24px}
+.prof:hover{box-shadow:inset 0 0 0 1px var(--plum-3)}
+.prof .pic{aspect-ratio:1/1;border-radius:16px;overflow:hidden;position:relative}
+.prof .pic .bg{position:absolute;inset:0;background-size:cover;background-position:center 20%;transition:transform .8s var(--ease)}
+.prof:hover .pic .bg{transform:scale(1.06)}
+.prof h3{font-size:22px}
+.prof p{margin:4px 0 6px;color:var(--muted-d);font-size:15px;line-height:1.45}
+.prof a{font-size:14px;font-weight:600;color:var(--lilac);text-decoration:none}
+.prof a:hover{text-decoration:underline}
+@media (max-width:1020px){.team .bento{grid-template-columns:1fr}.t1,.prof{grid-column:auto;grid-row:auto}.t1{min-height:420px}}
+@media (max-width:480px){.prof{grid-template-columns:88px 1fr;gap:14px}}
+
+/* prova */
+.proof .bento{grid-auto-rows:minmax(0,auto)}
+.p1{grid-column:1 / span 4;grid-row:span 2;min-height:440px;color:var(--paper)}
+.p1 .bg{background-position:center 18%}
+.p1 .tile-pad{justify-content:flex-end}
+.p1 h3{font-size:clamp(26px,2.8vw,40px);max-width:18ch}
+.p1 p{margin:0;max-width:44ch;color:rgba(245,239,248,.88)}
+.p2{grid-column:5 / span 2;background:var(--tile-l);color:var(--ink);box-shadow:inset 0 0 0 1px var(--mist-2)}
+.p2 .k{font-family:var(--display);font-weight:800;font-size:14px;color:var(--lilac-deep)}
+.p2 h3{font-size:21px}
+.p2 p{margin:0;color:var(--muted-l);font-size:15px}
+.voice{grid-column:span 2;display:flex;align-items:center;gap:14px;padding:18px;background:var(--tile-l);color:var(--ink);text-decoration:none;box-shadow:inset 0 0 0 1px var(--mist-2)}
+.voice:hover{box-shadow:inset 0 0 0 1px var(--lilac-deep)}
+.av{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--lilac);font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-.03em}
+.voice b{display:block;font-size:16px}
+.voice span{font-size:14px;color:var(--muted-l)}
+.voice .go{margin-left:auto;flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--mist);transition:transform .35s var(--spring),background .25s}
+.voice:hover .go{transform:scale(1.1);background:var(--lilac)}
+.voice .go svg{width:12px;height:12px;fill:var(--ink)}
+@media (max-width:1020px){.proof .bento{grid-template-columns:repeat(2,minmax(0,1fr))}.p1{grid-column:1 / -1}.p2{grid-column:span 1}.voice{grid-column:1 / -1}}
+@media (max-width:560px){.proof .bento{grid-template-columns:1fr}.p2{grid-column:auto}.p1{min-height:380px}}
+
+/* inscrição */
+.enroll-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,470px);gap:64px;align-items:start}
+.enroll-copy{display:grid;gap:22px;min-width:0}
+.next-list{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:10px}
+.next-list li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 20px;border-radius:18px;background:var(--plum-2);transition:transform .35s var(--spring)}
+.next-list li:hover{transform:translateX(4px)}
+.next-list b{display:block;font-weight:700;font-size:16px}
+.next-list span{font-size:14px;color:var(--muted-d)}
+.next-list em{font-style:normal;font-size:14px;font-weight:700;color:var(--champagne);white-space:nowrap}
+.enroll-form{display:grid;gap:8px;background:var(--paper);color:var(--ink);border-radius:26px;padding:30px}
+.enroll-form h3{font-size:26px;margin-bottom:4px}
+.enroll-form .sub{margin:0 0 6px;font-size:15px;color:var(--muted-l)}
+.enroll-form label{font-size:14px;font-weight:600;margin-top:8px}
+.enroll-form input,.enroll-form select{font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid var(--mist-2);border-radius:12px;padding:13px 14px;width:100%;min-width:0;transition:border-color .2s,box-shadow .2s}
+.enroll-form input:focus,.enroll-form select:focus{outline:none;border-color:var(--lilac-deep);box-shadow:0 0 0 4px rgba(95,67,150,.15)}
+.enroll-form .btn{margin-top:14px}
+.form-err{margin:4px 0 0;font-size:14px;font-weight:600;color:#a3264a}
+.form-note{margin:4px 0 0;font-size:13px;line-height:1.5;color:var(--muted-l)}
+@media (max-width:960px){.enroll-grid{grid-template-columns:minmax(0,1fr);gap:40px}}
+@media (max-width:480px){.enroll-form{padding:22px}.next-list li{flex-direction:column;align-items:flex-start;gap:6px}}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.faq-side{display:grid;gap:22px;position:sticky;top:110px}
+.faq-list{display:grid;gap:10px}
+details{background:var(--tile-l);border-radius:20px;box-shadow:inset 0 0 0 1px var(--mist-2);transition:box-shadow .3s}
+details[open]{box-shadow:inset 0 0 0 1.5px var(--lilac-deep)}
+summary{list-style:none;cursor:pointer;padding:22px 24px;display:flex;align-items:center;gap:16px;font-family:var(--display);font-weight:700;font-size:clamp(17px,1.4vw,20px);letter-spacing:-.02em;line-height:1.3}
+summary::-webkit-details-marker{display:none}
+summary .q{flex:none;font-weight:800;color:var(--lilac-deep);width:28px}
+summary .pm{margin-left:auto;flex:none;width:30px;height:30px;border-radius:50%;background:var(--mist);position:relative;transition:transform .4s var(--spring),background .25s}
+summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.8px;border-radius:2px;background:var(--ink);transform:translate(-50%,-50%)}
+summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s var(--spring)}
+details[open] summary .pm{background:var(--lilac);transform:rotate(180deg)}
+details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
+details .ans{padding:0 24px 22px 68px;color:var(--muted-l);font-size:16px;max-width:62ch}
+details .ans p{margin:0}
+@media (max-width:960px){.faq-grid{grid-template-columns:minmax(0,1fr);gap:36px}.faq-side{position:static}}
+@media (max-width:480px){summary{padding:18px}details .ans{padding:0 18px 18px 18px}}
+
+/* final */
+.final{padding-block:clamp(96px,12vw,170px)}
+.final .wrap{display:grid;gap:30px;justify-items:start}
+.final h2{font-size:clamp(40px,6.6vw,104px);max-width:13ch}
+.contact-line{display:flex;flex-wrap:wrap;align-items:center;gap:12px;font-size:15px;color:var(--muted-d)}
+.copy-btn{font:inherit;font-size:14px;font-weight:600;background:transparent;color:var(--paper);border:0;box-shadow:inset 0 0 0 1.5px var(--plum-3);border-radius:999px;padding:8px 14px;cursor:pointer}
+.copy-btn:hover{box-shadow:inset 0 0 0 1.5px var(--lilac)}
+footer{box-shadow:0 -1px 0 var(--plum-3)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-block:26px;font-size:14px;color:var(--muted-d)}
+footer a{text-decoration:none}
+footer a:hover{color:var(--paper)}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap}
+
+/* barra fixa no celular */
+.sticky-cta{position:fixed;z-index:55;left:0;right:0;bottom:0;display:none;gap:10px;align-items:center;
+  padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
+  background:rgba(27,16,32,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 -1px 0 var(--plum-3);
+  transform:translateY(110%);transition:transform .45s var(--ease)}
+.sticky-cta.show{transform:none}
+.sticky-cta .btn{flex:1;padding:14px 18px;font-size:15px}
+.sticky-cta .wa{flex:none;width:50px;height:50px;padding:0;border-radius:50%}
+.sticky-cta .wa svg{width:22px;height:22px}
+@media (max-width:860px){.sticky-cta{display:flex}body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Pormaishof, início">
+      <span class="mono" aria-hidden="true"><span>P</span><span>H</span></span>
+      <span class="wordmark">PORMAIS<b>HOF</b></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#formacoes">Formações</a>
+      <a href="#mapa">Marcação</a>
+      <a href="#metodo">Método</a>
+      <a href="#professoras">Professoras</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="btn btn-main" href="#inscricao" data-cta="topo">Garantir vaga</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- HERO: CTA do topo -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="live"><i></i>Inscrições abertas em Recife</span>
+        <h1 class="display">
+          <span class="ln"><span>Aprenda HOF</span></span>
+          <span class="ln"><span>aplicando</span></span>
+          <span class="ln"><span>em paciente.</span></span>
+        </h1>
+        <p class="lead">Cursos presenciais de Harmonização Orofacial para cirurgiões-dentistas. Anatomia, marcação e prática supervisionada no mesmo programa.</p>
+        <div class="cta-row">
+          <a class="btn btn-main" href="#inscricao" data-cta="hero">Garantir minha vaga
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+          <a class="btn btn-line" href="https://wa.me/5581992411010?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20as%20forma%C3%A7%C3%B5es%20da%20Pormaishof." target="_blank" rel="noopener">Tirar dúvidas no WhatsApp</a>
+        </div>
+        <div class="proofline">
+          <div class="chipnum"><span class="num">30+</span><span>turmas<br>formadas</span></div>
+          <div class="chipnum"><span class="num">3</span><span>formações<br>presenciais</span></div>
+          <div class="chipnum"><span class="num">2026</span><span>palco principal<br>do EPO</span></div>
+        </div>
+      </div>
+      <figure class="hero-film" id="heroFilm">
+        <video id="herovid" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg" src="img/hero.mp4" aria-label="Aula prática da Turma 19 de toxina botulínica"></video>
+        <figcaption class="film-note"><b>Turma 19, Imersão em Toxina</b>Prática em paciente, com a professora ao lado.</figcaption>
+        <button class="film-btn" id="heroplay" type="button" aria-label="Pausar vídeo"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3.5" y="3" width="3" height="10" rx="1"/><rect x="9.5" y="3" width="3" height="10" rx="1"/></svg></button>
+      </figure>
+    </div>
+  </section>
+
+  <div class="ticker" aria-label="Turmas recentes">
+    <div class="ticker-track">
+      <div class="ticker-item">Turma 23<span class="sep"></span>Perfect Lips 08<span class="sep"></span>EPO 2026<span class="sep"></span>Turma 22<span class="sep"></span>Perfect Lips 07<span class="sep"></span>Workshop Bioestimuladores<span class="sep"></span>Turma 21<span class="sep"></span>Move &amp; Celebrate<span class="sep"></span></div>
+      <div class="ticker-item" aria-hidden="true">Turma 23<span class="sep"></span>Perfect Lips 08<span class="sep"></span>EPO 2026<span class="sep"></span>Turma 22<span class="sep"></span>Perfect Lips 07<span class="sep"></span>Workshop Bioestimuladores<span class="sep"></span>Turma 21<span class="sep"></span>Move &amp; Celebrate<span class="sep"></span></div>
+    </div>
+  </div>
+
+  <!-- MOTIVOS (bento) -->
+  <section class="sec band-light why" id="motivos">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" data-reveal>5 motivos para aprender aqui</h2>
+        <p class="lead">O que muda na sua prática quando a formação junta ciência, marcação e paciente real.</p>
+      </div>
+      <div class="bento" data-stagger>
+        <article class="tile photo w1"><div class="bg" style="background-image:url(img/aula-grupo.jpg);background-position:center 35%"></div><div class="shade"></div>
+          <div class="tile-pad"><span class="k">1</span><h3>Você aplica em paciente real</h3><p>Prática supervisionada em sala, com a professora ao lado em cada caso.</p></div></article>
+        <article class="tile w2"><div class="tile-pad"><span class="num">30+</span><p>turmas formadas em Recife desde 2024</p></div></article>
+        <article class="tile w3"><div class="tile-pad"><span class="k">2</span><h3>Marcação com base anatômica</h3><p>Apostila própria com pontos de aplicação e regiões de segurança.</p></div></article>
+        <article class="tile photo w4"><div class="bg" style="background-image:url(img/planejamento.jpg);background-position:center 40%"></div><div class="shade" style="background:rgba(27,16,32,.18)"></div></article>
+        <article class="tile w5"><div class="tile-pad"><span class="k">3</span><h3>Professoras que atendem todos os dias</h3><p>Quem ensina tem agenda cheia no consultório.</p></div></article>
+        <article class="tile photo w6"><div class="bg" style="background-image:url(img/epo-palco.jpg);background-position:center 22%"></div><div class="shade"></div>
+          <div class="tile-pad"><span class="k">4</span><h3>Palco principal do EPO 2026</h3><p>Convidada para falar sobre o futuro da harmonização.</p></div></article>
+        <article class="tile w7"><div class="tile-pad"><span class="k">5</span><h3>Rede depois do certificado</h3><p>Ex-alunas seguem trocando casos.</p>
+          <div class="chips"><span class="chip">Encontros</span><span class="chip">Troca de casos</span><span class="chip">Prioridade em turmas</span></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMAÇÕES (bento) + CTA do meio -->
+  <section class="sec courses" id="formacoes">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" data-reveal>3 formações. Escolha por onde começar.</h2>
+        <p class="lead">Turmas reduzidas, presenciais em Recife, com prática do primeiro ao último dia.</p>
+      </div>
+      <div class="bento" data-stagger>
+        <article class="tile c1">
+          <div class="cimg"><div class="bg" data-par style="background-image:url(img/toxina-aplicacao.jpg)"></div></div>
+          <div class="cbody">
+            <span class="cstatus">Turma 24 com inscrições abertas</span>
+            <h3>Imersão Expert em Toxina Botulínica</h3>
+            <p>Domine reconstituição, marcação e aplicação de toxina. É o curso que deu origem à escola.</p>
+            <ul class="topics"><li>Anatomia muscular aplicada</li><li>Reconstituição e diluição na prática</li><li>Marcação e aplicação em pacientes</li><li>Intercorrências e pós-procedimento</li></ul>
+            <a class="btn btn-main" href="#inscricao" data-curso="toxina">Quero esta formação</a>
+          </div>
+        </article>
+        <article class="tile c2">
+          <div class="cimg"><div class="bg" data-par style="background-image:url(img/labios-julia.jpg);background-position:center 48%"></div></div>
+          <div class="cbody">
+            <span class="cstatus">Turma 9 com inscrições abertas</span>
+            <h3>Perfect Lips</h3>
+            <p>Contorno e volume naturais com ácido hialurônico.</p>
+            <ul class="topics"><li>Proporção e análise do sorriso</li><li>Técnicas de contorno e volume</li><li>Atendimento de pacientes em aula</li></ul>
+            <a class="btn btn-main" href="#inscricao" data-curso="lips">Quero esta formação</a>
+          </div>
+        </article>
+        <article class="tile c3">
+          <div class="cimg"><div class="bg" data-par style="background-image:url(img/bio-procedimento.jpg);background-position:center 22%"></div></div>
+          <div class="cbody">
+            <span class="cstatus">2ª edição com inscrições abertas</span>
+            <h3>Workshop de Bioestimuladores de Colágeno</h3>
+            <p>Sustentação e colágeno com bioestimuladores, incluindo o HarmonyCa.</p>
+          </div>
+          <div class="cbody">
+            <ul class="topics"><li>Fisiologia do envelhecimento</li><li>Bioestimuladores híbridos</li><li>Planejamento de vetores</li><li>Aplicação supervisionada</li></ul>
+            <a class="btn btn-main" href="#inscricao" data-curso="bio">Quero esta formação</a>
+          </div>
+        </article>
+      </div>
+      <div class="midcta" data-reveal>
+        <h3>Não sabe por qual começar? A equipe monta sua trilha.</h3>
+        <div class="cta-row">
+          <a class="btn btn-ink" href="#inscricao" data-cta="meio">Fazer pré-inscrição</a>
+          <a class="btn btn-line" href="https://wa.me/5581992411010?text=Ol%C3%A1!%20Quero%20ajuda%20para%20escolher%20minha%20forma%C3%A7%C3%A3o%20na%20Pormaishof." target="_blank" rel="noopener">Perguntar no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA DE MARCAÇÃO -->
+  <section class="sec band-light" id="mapa">
+    <div class="wrap map-grid">
+      <div class="map-copy">
+        <h2 class="display" data-reveal>Cada técnica começa no mapa da face</h2>
+        <p class="lead">Antes de qualquer agulha, você aprende onde aplicar e onde ter atenção. Troque a formação e passe pela legenda para ver cada região.</p>
+      </div>
+          <div class="facemap" id="facemap">
+            <div class="fm-head">
+              <p class="fm-title">Mapa de marcação</p>
+              <div class="fm-tabs" role="tablist" aria-label="Escolha a formação">
+                <button type="button" role="tab" class="fm-tab" data-layer="toxina" aria-selected="true">Toxina</button>
+                <button type="button" role="tab" class="fm-tab" data-layer="labios" aria-selected="false">Lábios</button>
+                <button type="button" role="tab" class="fm-tab" data-layer="bio" aria-selected="false">Bioestimulador</button>
+              </div>
+            </div>
+            <div class="fm-body">
+              <svg class="fm-svg" id="fmSvg" viewBox="0 0 360 440" role="img" aria-label="Ilustração de um rosto com pontos de aplicação e regiões de atenção">
+                <g class="fm-face">
+                  <path pathLength="1" d="M180 40 C110 40 70 95 72 170 C74 240 92 300 120 345 C140 375 160 392 180 395 C200 392 220 375 240 345 C268 300 286 240 288 170 C290 95 250 40 180 40 Z"/>
+                  <path pathLength="1" class="soft" d="M96 122 C110 84 150 70 180 70 C210 70 250 84 264 122"/>
+                  <path pathLength="1" d="M112 168 C128 156 150 156 163 163"/>
+                  <path pathLength="1" d="M248 168 C232 156 210 156 197 163"/>
+                  <path pathLength="1" d="M118 192 C130 182 150 182 160 192 C150 200 130 200 118 192 Z"/>
+                  <path pathLength="1" d="M242 192 C230 182 210 182 200 192 C210 200 230 200 242 192 Z"/>
+                  <circle cx="139" cy="192" r="5" class="iris"/><circle cx="221" cy="192" r="5" class="iris"/>
+                  <path pathLength="1" class="soft" d="M176 200 C174 230 164 248 163 258"/>
+                  <path pathLength="1" d="M163 258 C170 266 190 266 197 258"/>
+                  <path pathLength="1" class="soft" d="M184 200 C186 230 196 248 197 258"/>
+                  <path pathLength="1" d="M148 305 C160 296 172 296 180 302 C188 296 200 296 212 305"/>
+                  <path pathLength="1" d="M148 305 C165 310 195 310 212 305"/>
+                  <path pathLength="1" d="M148 305 C160 322 200 322 212 305"/>
+                  <path pathLength="1" class="soft" d="M72 176 C58 172 56 212 76 222"/>
+                  <path pathLength="1" class="soft" d="M288 176 C302 172 304 212 284 222"/>
+                  <path pathLength="1" class="soft" d="M142 386 L139 432 M218 386 L221 432"/>
+                </g>
+
+                <g class="fm-layer" data-layer="toxina">
+                  <g class="grp zone" data-g="sobrancelha"><title>Margem acima da sobrancelha</title>
+                    <path d="M104 150 C126 132 154 130 170 140 L168 152 C152 144 128 146 110 162 Z"/>
+                    <path d="M256 150 C234 132 206 130 190 140 L192 152 C208 144 232 146 250 162 Z"/>
+                  </g>
+                  <g class="grp zone" data-g="orbita"><title>Rebordo orbital</title>
+                    <ellipse cx="139" cy="193" rx="31" ry="19"/><ellipse cx="221" cy="193" rx="31" ry="19"/>
+                  </g>
+                  <g class="grp pts" data-g="frontal"><title>Frontal</title>
+                    <circle cx="138" cy="104" r="4.5"/><circle cx="180" cy="98" r="4.5"/><circle cx="222" cy="104" r="4.5"/><circle cx="158" cy="124" r="4.5"/><circle cx="202" cy="124" r="4.5"/>
+                  </g>
+                  <g class="grp pts" data-g="glabela"><title>Glabela</title>
+                    <circle cx="180" cy="158" r="4.5"/><circle cx="166" cy="151" r="4.5"/><circle cx="194" cy="151" r="4.5"/><circle cx="154" cy="146" r="4.5"/><circle cx="206" cy="146" r="4.5"/>
+                  </g>
+                  <g class="grp pts" data-g="periorbital"><title>Periorbital</title>
+                    <circle cx="100" cy="178" r="4.5"/><circle cx="97" cy="194" r="4.5"/><circle cx="102" cy="210" r="4.5"/><circle cx="260" cy="178" r="4.5"/><circle cx="263" cy="194" r="4.5"/><circle cx="258" cy="210" r="4.5"/>
+                  </g>
+                </g>
+
+                <g class="fm-layer" data-layer="labios" hidden>
+                  <g class="grp zone line" data-g="arteria"><title>Trajeto da artéria labial</title>
+                    <path d="M146 303 C162 306 198 306 214 303"/><path d="M150 310 C166 318 194 318 210 310"/>
+                  </g>
+                  <g class="grp pts" data-g="contorno"><title>Contorno</title>
+                    <circle cx="150" cy="304" r="4"/><circle cx="162" cy="298" r="4"/><circle cx="198" cy="298" r="4"/><circle cx="210" cy="304" r="4"/>
+                  </g>
+                  <g class="grp pts" data-g="cupido"><title>Arco do cupido e filtro</title>
+                    <circle cx="180" cy="301" r="4"/><circle cx="174" cy="289" r="4"/><circle cx="186" cy="289" r="4"/>
+                  </g>
+                  <g class="grp pts" data-g="volume"><title>Volume</title>
+                    <circle cx="166" cy="313" r="4"/><circle cx="180" cy="316" r="4"/><circle cx="194" cy="313" r="4"/>
+                  </g>
+                </g>
+
+                <g class="fm-layer" data-layer="bio" hidden>
+                  <g class="grp zone" data-g="forame"><title>Forame infraorbital</title>
+                    <circle cx="140" cy="228" r="9"/><circle cx="220" cy="228" r="9"/>
+                  </g>
+                  <g class="grp vec" data-g="malar"><title>Vetores malares</title>
+                    <path d="M78 196 L126 246 M78 196 L122 272 M78 196 L116 300 M282 196 L234 246 M282 196 L238 272 M282 196 L244 300"/>
+                  </g>
+                  <g class="grp vec" data-g="mandibula"><title>Linha mandibular</title>
+                    <path d="M96 300 L140 352 M264 300 L220 352"/>
+                  </g>
+                  <g class="grp pts" data-g="entrada"><title>Pontos de entrada</title>
+                    <circle cx="78" cy="196" r="4.5"/><circle cx="282" cy="196" r="4.5"/><circle cx="96" cy="300" r="4.5"/><circle cx="264" cy="300" r="4.5"/>
+                  </g>
+                </g>
+              </svg>
+
+              <div class="fm-legend">
+                <ul data-layer="toxina">
+                  <li tabindex="0" data-g="frontal"><i class="sw pt"></i><span>Frontal</span><small>5 pontos</small></li>
+                  <li tabindex="0" data-g="glabela"><i class="sw pt"></i><span>Glabela</span><small>5 pontos</small></li>
+                  <li tabindex="0" data-g="periorbital"><i class="sw pt"></i><span>Periorbital</span><small>3 pontos por lado</small></li>
+                  <li tabindex="0" data-g="sobrancelha"><i class="sw zn"></i><span>Margem acima da sobrancelha</span><small>região de atenção</small></li>
+                  <li tabindex="0" data-g="orbita"><i class="sw zn"></i><span>Rebordo orbital</span><small>região de atenção</small></li>
+                </ul>
+                <ul data-layer="labios" hidden>
+                  <li tabindex="0" data-g="contorno"><i class="sw pt"></i><span>Contorno</span><small>borda do vermelhão</small></li>
+                  <li tabindex="0" data-g="cupido"><i class="sw pt"></i><span>Arco do cupido e filtro</span><small>definição</small></li>
+                  <li tabindex="0" data-g="volume"><i class="sw pt"></i><span>Volume</span><small>corpo do lábio</small></li>
+                  <li tabindex="0" data-g="arteria"><i class="sw ln"></i><span>Trajeto da artéria labial</span><small>região de atenção</small></li>
+                </ul>
+                <ul data-layer="bio" hidden>
+                  <li tabindex="0" data-g="entrada"><i class="sw pt"></i><span>Pontos de entrada</span><small>técnica de vetores</small></li>
+                  <li tabindex="0" data-g="malar"><i class="sw vc"></i><span>Vetores malares</span><small>sustentação</small></li>
+                  <li tabindex="0" data-g="mandibula"><i class="sw vc"></i><span>Linha mandibular</span><small>contorno</small></li>
+                  <li tabindex="0" data-g="forame"><i class="sw zn"></i><span>Forame infraorbital</span><small>região de atenção</small></li>
+                </ul>
+                <p class="fm-note">Ilustração didática. A marcação real é individual e definida caso a caso, em aula.</p>
+              </div>
+            </div>
+          </div>
+    </div>
+  </section>
+
+  <!-- MÉTODO -->
+  <section class="sec" id="metodo">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" data-reveal>4 etapas, do estudo da face ao caso pronto</h2>
+        <p class="lead">O mesmo caminho em todas as formações.</p>
+      </div>
+      <ol class="steps" id="steps">
+        <li class="steps-line" aria-hidden="true"><i id="stepsBar"></i></li>
+        <li class="step"><span class="n">01</span><h3>Base científica</h3><p>Anatomia aplicada, farmacologia do produto e literatura atual.</p></li>
+        <li class="step"><span class="n">02</span><h3>Preparo e marcação</h3><p>Reconstituição, diluição e marcação feitas por você, com correção ao lado.</p></li>
+        <li class="step"><span class="n">03</span><h3>Prática em paciente</h3><p>Atendimento real em sala, com o planejamento discutido antes de cada caso.</p></li>
+        <li class="step"><span class="n">04</span><h3>Rede depois da turma</h3><p>Troca de casos e encontros como o Move &amp; Celebrate.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PROFESSORAS (bento) -->
+  <section class="sec team" id="professoras">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" data-reveal>3 professoras que atendem todos os dias</h2>
+      </div>
+      <div class="bento" data-stagger>
+        <article class="tile t1"><div class="bg" style="background-image:url(img/socias.jpg)"></div><div class="shade" style="background:rgba(27,16,32,.25)"></div>
+          <div class="tile-pad"><h3>Fundadoras da Pormaishof</h3><p>Cirurgiãs-dentistas que levam para a sala de aula o que fazem no consultório.</p></div></article>
+        <article class="tile prof"><div class="pic"><div class="bg" style="background-image:url(img/prof-ingrid.jpg)"></div></div>
+          <div><h3>Dra. Ingrid Arreguy</h3><p>Mestre pela UFPB, dedicada à harmonização orofacial.</p><a href="https://www.instagram.com/ingridarreguy/" target="_blank" rel="noopener">@ingridarreguy</a></div></article>
+        <article class="tile prof"><div class="pic"><div class="bg" style="background-image:url(img/prof-bruna.jpg)"></div></div>
+          <div><h3>Dra. Bruna Leal</h3><p>Atende na Vitalitè Clínica Orofacial.</p><a href="https://www.instagram.com/lealbrunac/" target="_blank" rel="noopener">@lealbrunac</a></div></article>
+        <article class="tile prof"><div class="pic"><div class="bg" style="background-image:url(img/prof-julia.jpg)"></div></div>
+          <div><h3>Dra. Júlia Sandes</h3><p>CRO 15128, com consultório em Caruaru.</p><a href="https://www.instagram.com/juliasandees/" target="_blank" rel="noopener">@juliasandees</a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA (bento) -->
+  <section class="sec band-light proof" id="alunas">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" data-reveal>Do curso ao palco principal do EPO 2026</h2>
+        <p class="lead">Em dois anos, a escola passou a ensinar também em congresso.</p>
+      </div>
+      <div class="bento" data-stagger>
+        <article class="tile p1"><div class="bg" style="background-image:url(img/epo-palco.jpg)"></div><div class="shade" style="background:rgba(27,16,32,.5)"></div>
+          <div class="tile-pad"><h3>Convidada pelo EPO para o palco principal</h3><p>A Pormaishof apresentou sua visão sobre o futuro da harmonização: gerenciar o envelhecimento com naturalidade.</p></div></article>
+        <article class="tile p2"><div class="tile-pad"><span class="k">Fast Talks</span><h3>Estreia do formato no XIV EPO</h3><p>Bioestimuladores injetáveis combinados com novas tecnologias.</p></div></article>
+        <article class="tile p2"><div class="tile-pad"><span class="k">Move &amp; Celebrate</span><h3>2 anos com ex-alunas</h3><p>Aula de bootcamp para quem já fez lábios e toxina.</p></div></article>
+        <a class="tile voice" href="https://www.instagram.com/pormaishof/" target="_blank" rel="noopener"><span class="av" aria-hidden="true">RM</span><span><b>Dra. Rosane Melo</b><span>Depoimento, Turma 19 de Toxina</span></span><span class="go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 2v12l10-6z"/></svg></span></a>
+        <a class="tile voice" href="https://www.instagram.com/pormaishof/" target="_blank" rel="noopener"><span class="av" aria-hidden="true">MC</span><span><b>Maria Clara</b><span>Depoimento, Turma 18 de Toxina</span></span><span class="go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 2v12l10-6z"/></svg></span></a>
+        <a class="tile voice" href="https://www.instagram.com/pormaishof/" target="_blank" rel="noopener"><span class="av" aria-hidden="true">JH</span><span><b>Dra. Jemima Hana</b><span>Depoimento, Turma 6 do Perfect Lips</span></span><span class="go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 2v12l10-6z"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSCRIÇÃO -->
+  <section class="sec" id="inscricao">
+    <div class="wrap enroll-grid">
+      <div class="enroll-copy">
+        <h2 class="display" data-reveal>Próximas turmas: garanta a sua em 1 minuto</h2>
+        <p class="lead">Preencha 3 campos. A equipe responde no WhatsApp com data, investimento e condições.</p>
+        <ul class="next-list">
+          <li><div><b>Imersão Expert em Toxina Botulínica</b><span>Turma 24</span></div><em>Data a confirmar</em></li>
+          <li><div><b>Perfect Lips</b><span>Turma 9</span></div><em>Data a confirmar</em></li>
+          <li><div><b>Workshop de Bioestimuladores</b><span>2ª edição</span></div><em>Data a confirmar</em></li>
+        </ul>
+      </div>
+      <form class="enroll-form" id="enrollForm" novalidate>
+        <h3>Pré-inscrição</h3>
+        <p class="sub">Sem compromisso. Você confirma tudo pelo WhatsApp.</p>
+        <label for="f-nome">Nome completo</label>
+        <input id="f-nome" name="nome" type="text" autocomplete="name" required>
+        <label for="f-cro">Registro no CRO</label>
+        <input id="f-cro" name="cro" type="text" placeholder="Ex.: CRO-PE 12345">
+        <label for="f-curso">Formação de interesse</label>
+        <select id="f-curso" name="curso" required>
+          <option value="">Escolha uma formação</option>
+          <option value="toxina">Imersão Expert em Toxina Botulínica</option>
+          <option value="lips">Perfect Lips</option>
+          <option value="bio">Workshop de Bioestimuladores de Colágeno</option>
+        </select>
+        <a class="btn btn-main" id="f-send" href="https://wa.me/5581992411010" target="_blank" rel="noopener">Enviar pré-inscrição pelo WhatsApp</a>
+        <p class="form-err" id="f-err" role="alert" hidden>Preencha seu nome e escolha a formação para continuar.</p>
+        <p class="form-note">Abre o WhatsApp da Pormaishof com a mensagem pronta. Nada é enviado antes de você confirmar.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ: 5 objeções -->
+  <section class="sec band-light" id="duvidas">
+    <div class="wrap faq-grid">
+      <div class="faq-side">
+        <h2 class="display" data-reveal>5 dúvidas antes de se inscrever</h2>
+        <p class="lead">Ainda com alguma? Pergunte direto para a equipe.</p>
+        <div class="cta-row"><a class="btn btn-ink" href="https://wa.me/5581992411010?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20antes%20de%20me%20inscrever." target="_blank" rel="noopener">Perguntar no WhatsApp</a></div>
+      </div>
+      <div class="faq-list">
+        <details open><summary><span class="q">1</span>Nunca apliquei. Consigo acompanhar?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Sim. A formação começa pela anatomia e pela marcação da face, antes de qualquer aplicação, e na prática a professora fica ao seu lado em cada caso.</p></div></details>
+        <details><summary><span class="q">2</span>Vou aplicar em paciente de verdade?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Sim. A prática acontece em sala, com pacientes e supervisão. A equipe orienta cada turma sobre os pacientes do dia prático.</p></div></details>
+        <details><summary><span class="q">3</span>Vale o investimento?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Você sai sabendo executar um procedimento que já pode oferecer no consultório. Valor e condições chegam pelo WhatsApp depois da pré-inscrição, sem compromisso.</p></div></details>
+        <details><summary><span class="q">4</span>E depois do curso, fico sozinha?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Não. Ex-alunas seguem em contato, trocam casos e voltam para encontros como o Move &amp; Celebrate, feito para comemorar os 2 anos da escola.</p></div></details>
+        <details><summary><span class="q">5</span>Quem pode se inscrever?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Cirurgiões-dentistas com registro ativo no CRO, tanto quem está começando na harmonização quanto quem quer aprofundar uma técnica.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final">
+    <div class="wrap">
+      <h2 class="display" data-reveal>Sua próxima turma começa com 1 mensagem.</h2>
+      <div class="cta-row">
+        <a class="btn btn-main" href="#inscricao" data-cta="rodape">Garantir minha vaga
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+        <a class="btn btn-line" href="https://wa.me/5581992411010?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20pr%C3%B3ximas%20turmas%20da%20Pormaishof." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+      <div class="contact-line"><span id="phone">(81) 99241-1010</span><button class="copy-btn" id="copy" type="button">Copiar número</button><span>Recife, PE</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Pormaishof. Ensino com embasamento científico em Recife.</span>
+    <div class="foot-links">
+      <a href="https://www.instagram.com/pormaishof/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#formacoes">Formações</a>
+      <a href="#duvidas">Dúvidas</a>
+    </div>
+  </div>
+</footer>
+
+<!-- CTA fixo no celular -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn btn-main" href="#inscricao" data-cta="sticky">Garantir minha vaga</a>
+  <a class="btn btn-line wa" href="https://wa.me/5581992411010?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20pr%C3%B3ximas%20turmas%20da%20Pormaishof." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12Z"/></svg></a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"EducationalOrganization","@id":"#pormaishof","name":"Pormaishof","description":"Cursos presenciais de Harmonização Orofacial com embasamento científico para cirurgiões-dentistas.","telephone":"+55 81 99241-1010","address":{"@type":"PostalAddress","addressLocality":"Recife","addressRegion":"PE","addressCountry":"BR"},"sameAs":["https://www.instagram.com/pormaishof/"],"foundingDate":"2024"},
+ {"@type":"Course","name":"Imersão Expert em Toxina Botulínica","description":"Curso presencial de toxina botulínica, da reconstituição do produto à aplicação supervisionada em pacientes.","provider":{"@id":"#pormaishof"},"courseMode":"onsite","inLanguage":"pt-BR"},
+ {"@type":"Course","name":"Perfect Lips","description":"Imersão presencial em preenchimento labial com ácido hialurônico.","provider":{"@id":"#pormaishof"},"courseMode":"onsite","inLanguage":"pt-BR"},
+ {"@type":"Course","name":"Workshop de Bioestimuladores de Colágeno","description":"Workshop presencial de bioestimuladores de colágeno, com teoria e prática supervisionada.","provider":{"@id":"#pormaishof"},"courseMode":"onsite","inLanguage":"pt-BR"}
+]}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const top=document.getElementById('top'), sticky=document.getElementById('stickyCta');
+  const onScroll=()=>{ top.classList.toggle('is-scrolled',scrollY>30); sticky.classList.toggle('show',scrollY>innerHeight*.6); };
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  // ---------- movimento ligado à rolagem (GSAP ScrollTrigger). Sem GSAP, tudo fica visível e parado.
+  const gsap=window.gsap, ST=window.ScrollTrigger;
+  if(gsap&&ST&&!reduce){
+    gsap.registerPlugin(ST);
+    // títulos: revelação por máscara, ligada à rolagem (scrub)
+    gsap.utils.toArray('[data-reveal]').forEach(el=>{
+      gsap.fromTo(el,{clipPath:'inset(0 0 100% 0)',y:40},{clipPath:'inset(0 0 0% 0)',y:0,ease:'none',
+        scrollTrigger:{trigger:el,start:'top 96%',end:'top 80%',scrub:.4}});
+    });
+    // bento: fade-up com stagger
+    gsap.utils.toArray('[data-stagger]').forEach(grid=>{
+      gsap.from(grid.children,{y:56,opacity:0,duration:.9,ease:'power3.out',stagger:.08,
+        scrollTrigger:{trigger:grid,start:'top 82%',once:true}});
+    });
+    // imagens dos cursos: parallax interno
+    gsap.utils.toArray('[data-par]').forEach(bg=>{
+      gsap.fromTo(bg,{yPercent:-6},{yPercent:6,ease:'none',scrollTrigger:{trigger:bg.parentElement,start:'top bottom',end:'bottom top',scrub:true}});
+    });
+    // vídeo da hero: recolhe levemente ao sair da tela
+    gsap.to('#heroFilm',{scale:.9,borderRadius:44,ease:'none',scrollTrigger:{trigger:'#heroFilm',start:'top 20%',end:'bottom top',scrub:true}});
+    // método: a linha avança com a rolagem e acende cada etapa
+    const steps=gsap.utils.toArray('.step');
+    gsap.fromTo('#stepsBar',{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:'#steps',start:'top 75%',end:'bottom 55%',scrub:.5,
+      onUpdate:self=>steps.forEach((s,i)=>s.classList.toggle('on',self.progress>=(i+.2)/steps.length))}});
+  }else{
+    document.querySelectorAll('.step').forEach(s=>s.classList.add('on'));
+  }
+
+  // ---------- mapa de marcação
+  (function(){
+    const svg=document.getElementById('fmSvg'); if(!svg) return;
+    const tabs=[...document.querySelectorAll('.fm-tab')];
+    const layers=[...svg.querySelectorAll('.fm-layer')], legends=[...document.querySelectorAll('.fm-legend ul')];
+    let shown=false;
+    function relight(){ if(reduce||!shown) return; svg.classList.remove('lit'); void svg.getBoundingClientRect();
+      [...svg.querySelectorAll('.fm-layer:not([hidden]) .grp > *')].forEach((el,i)=>el.style.transitionDelay=(i*45)+'ms');
+      requestAnimationFrame(()=>svg.classList.add('lit')); }
+    function show(name){
+      tabs.forEach(t=>t.setAttribute('aria-selected',String(t.dataset.layer===name)));
+      layers.forEach(l=>{ if(l.dataset.layer===name) l.removeAttribute('hidden'); else l.setAttribute('hidden',''); });
+      legends.forEach(l=>l.hidden=l.dataset.layer!==name);
+      svg.removeAttribute('data-focus'); relight();
+    }
+    tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.layer)));
+    document.querySelectorAll('.fm-legend li').forEach(li=>{
+      const on=()=>svg.setAttribute('data-focus',li.dataset.g), off=()=>svg.removeAttribute('data-focus');
+      li.addEventListener('mouseenter',on); li.addEventListener('mouseleave',off); li.addEventListener('focus',on); li.addEventListener('blur',off);
+    });
+    if(reduce||!('IntersectionObserver' in window)) return;
+    const r=svg.getBoundingClientRect(); if(r.top<innerHeight&&r.bottom>0) return;
+    svg.classList.add('armed');
+    const io=new IntersectionObserver(es=>{ if(!es.some(e=>e.isIntersecting)) return; io.disconnect();
+      svg.classList.add('drawn'); shown=true; setTimeout(()=>{ relight(); setTimeout(()=>svg.classList.remove('armed'),1200); },900); },{threshold:.35});
+    io.observe(svg);
+  })();
+
+  // ---------- pré-inscrição
+  (function(){
+    const nome=document.getElementById('f-nome'), cro=document.getElementById('f-cro'), curso=document.getElementById('f-curso');
+    const send=document.getElementById('f-send'), err=document.getElementById('f-err'), form=document.getElementById('enrollForm');
+    const names={toxina:'Imersão Expert em Toxina Botulínica',lips:'Perfect Lips',bio:'Workshop de Bioestimuladores de Colágeno'};
+    const valid=()=>nome.value.trim().length>1&&!!curso.value;
+    function update(){
+      let msg='Olá! Quero fazer a pré-inscrição na próxima turma'+(curso.value?' de '+names[curso.value]:'')+'.';
+      if(nome.value.trim()) msg+=' Meu nome é '+nome.value.trim()+(cro.value.trim()?' ('+cro.value.trim()+')':'')+'.';
+      send.href='https://wa.me/5581992411010?text='+encodeURIComponent(msg);
+      send.setAttribute('aria-disabled',String(!valid())); if(valid()) err.hidden=true;
+    }
+    [nome,cro].forEach(el=>el.addEventListener('input',update)); curso.addEventListener('change',update);
+    send.addEventListener('click',e=>{ if(!valid()){ e.preventDefault(); err.hidden=false; (nome.value.trim().length>1?curso:nome).focus(); } });
+    form.addEventListener('submit',e=>e.preventDefault());
+    document.querySelectorAll('a[data-curso]').forEach(a=>a.addEventListener('click',()=>{ curso.value=a.dataset.curso; update(); }));
+    update();
+  })();
+
+  // ---------- vídeo
+  const hv=document.getElementById('herovid'), hb=document.getElementById('heroplay');
+  if(reduce){hv.removeAttribute('autoplay');hv.pause();}
+  const sync=()=>{const on=!hv.paused;hb.setAttribute('aria-label',on?'Pausar vídeo':'Reproduzir vídeo');
+    hb.innerHTML=on?'<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3.5" y="3" width="3" height="10" rx="1"/><rect x="9.5" y="3" width="3" height="10" rx="1"/></svg>':'<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>';};
+  hb.addEventListener('click',()=>{hv.paused?hv.play().catch(()=>{}):hv.pause();}); hv.addEventListener('play',sync); hv.addEventListener('pause',sync); sync();
+
+  // ---------- copiar número
+  const copy=document.getElementById('copy'), phone=document.getElementById('phone');
+  copy.addEventListener('click',()=>{
+    const done=()=>{copy.textContent='Número copiado';setTimeout(()=>copy.textContent='Copiar número',2000);};
+    const fallback=()=>{const s=getSelection(),rg=document.createRange();rg.selectNodeContents(phone);s.removeAllRanges();s.addRange(rg);copy.textContent='Selecionado';};
+    try{navigator.clipboard.writeText('+55 81 99241-1010').then(done,fallback);}catch(e){fallback();}
+  });
+})();
+</script>
+</body>
+</html>
